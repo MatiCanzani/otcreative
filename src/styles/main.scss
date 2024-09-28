@@ -1,0 +1,158 @@
+@use "../styles/variables";
+@use "../styles/animation";
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  cursor: none;
+}
+
+body {
+  background-color: variables.$bkg-white;
+}
+
+.background {
+  display: block;
+  background-repeat: repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+  font-family: variables.$font-menu;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+  margin: 0;
+}
+
+.background1 {
+  display: block;
+  background-image: url("../images/bkg-1.png");
+  background-repeat: repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-blend-mode: multiply;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  -webkit-animation: animation 200s linear infinite reverse 0s;
+  animation: animation 200s linear infinite reverse 0s;
+}
+
+.background2 {
+  display: block;
+  background-image: url("../images/bkg-2.png");
+  background-repeat: repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+  font-family: variables.$font-menu;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  transform: rotate(110deg);
+  animation: animation 300s linear infinite reverse 0s;
+}
+.background3 {
+  display: block;
+  background-image: url("../images/bkg-3.png");
+  background-repeat: repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+  font-family: variables.$font-menu;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  transform: rotate(-135deg);
+  animation: animation 300s linear infinite 0s;
+}
+
+.container-fluid {
+  width: 92%;
+  margin: 0 auto;
+  margin-top: 1rem;
+
+  @media (min-width: 768px) {
+    width: 90%;
+    margin: 0 auto;
+  }
+  @media (min-width: 992px) {
+    width: 90%;
+    margin: 0 auto;
+  }
+  @media (min-width: 1200px) {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+h1,
+h2,
+h4 {
+  font-family: variables.$font-title;
+  text-align: center;
+}
+
+h1 {
+  font-weight: 900;
+  color: variables.$grey-shark;
+  margin-top: 2rem;
+  margin-bottom: 1rem !important;
+}
+
+h2 {
+  font-weight: 500;
+  color: variables.$grey-grey-shark-light;
+  font-size: 2rem;
+  margin: 0;
+  padding-top: 4rem;
+}
+
+h3 {
+  font-family: variables.$font;
+  text-align: center;
+  font-size: 2rem;
+  margin: 0;
+  padding-top: 4rem;
+}
+h4 {
+  color: variables.$grey-shark;
+  font-weight: 500;
+}
+
+section {
+  height: 100%;
+  margin: 0 auto;
+  padding-bottom: 15rem;
+  width: 90%;
+  @media (min-width: 768px) {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  h1 {
+    font-size: 3.3rem !important;
+    margin-top: 2rem;
+  }
+  h2 {
+    font-size: 4rem;
+  }
+}
+
+div {
+  &:hover ~ #cursorOutline {
+    transform: scale(0.5);
+    background-color: yellow;
+  }
+}
+

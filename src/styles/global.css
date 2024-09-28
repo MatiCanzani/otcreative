@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+import "@fontsource-variable/reem-kuf"
+import "@fontsource/average-sans"
+
+body {
+  cursor: none;
+}

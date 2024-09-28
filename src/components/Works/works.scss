@@ -1,0 +1,116 @@
+@use "../../styles/variables";
+
+.logos-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 75vh;
+}
+.brand-logo {
+  height: auto;
+  width: 9em;
+  filter: blur(4px);
+  &:hover {
+    filter: brightness(0.5);
+  }
+}
+.video {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.build-play {
+  border: none;
+}
+
+.modal-video {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+.modal-video-close-btn {
+  width: 24px;
+  cursor: pointer;
+}
+.modal-video-close-btn {
+  cursor: pointer;
+}
+
+.modal-video-movie-wrap {
+  background-color: transparent !important;
+}
+
+//
+
+.modal__bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  opacity: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 0.3s;
+  animation-name: modal-video;
+  -webkit-transition: opacity 0.3s ease-out;
+  -moz-transition: opacity 0.3s ease-out;
+  -ms-transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+  z-index: 100;
+}
+
+.modal__align {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+.modal__close {
+  background-color: rgb(220, 220, 220);
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  left: 95%;
+}
+
+.modal__video-align {
+  display: flex;
+  position: relative;
+  bottom: 37px;
+}
+
+.modal__video-style {
+  border-radius: 20px;
+  z-index: 100;
+  max-height: 550px;
+}
+
+@media screen and (max-width: 800px) {
+  .modal__content {
+    margin: 0rem 1rem;
+    width: 100%;
+  }
+  .modal__video-style {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .modal__content {
+    background: transparent;
+    height: auto;
+  }
+  .modal__video-align {
+    bottom: 0px;
+  }
+  .modal__video-style {
+    height: auto;
+  }
+}

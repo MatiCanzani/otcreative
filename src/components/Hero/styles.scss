@@ -1,0 +1,15 @@
+@use '../../styles/variables';
+
+.hero-cntr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 85vh;
+}
+
+.logo {
+    height: 80px;
+    width: 80px;
+  }
+  

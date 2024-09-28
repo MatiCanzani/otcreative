@@ -1,0 +1,49 @@
+@use "../../styles/variables";
+.contact-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 55%;
+  margin-top: -48rem;
+  background-color: black;
+  color: aliceblue;
+  width: 100%;
+  @media (min-width: 768px) {
+    margin-top: -33rem;
+  }
+}
+
+.locations {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: auto;
+  padding-top: 20rem;
+  h4 {
+    color: variables.$bkg-white;
+    padding: 0 1rem;
+  }
+  span {
+    font-size: 1.6rem;
+    font-family: variables.$font-menu;
+    color: variables.$bkg-white;
+  }
+}
+.social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10rem;
+  .icon {
+      width: 2.5rem;
+        height: 2.5rem;
+        color: variables.$bkg-white;
+      cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

@@ -1,0 +1,75 @@
+@use "../../styles/variables";
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-contact {
+  z-index: 1;
+  width: 100%;
+  height: 50vh;
+  @include center;
+  @media (min-width: 768px) {
+    height: 60vh;
+  }
+  form {
+    flex-direction: column;
+    @include center;
+    width: 100%;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 1rem;
+    font-family: variables.$font;
+    @media (min-width: 768px) {
+      width: 40%;
+    }
+  }
+}
+
+.form-cntr {
+  width: 100%;
+  @include center;
+  flex-direction: column;
+}
+
+@mixin form-input {
+  width: 100%;
+  font-family: variables.$font;
+  font-size: 1.6rem;
+  margin-top: 1.1rem;
+  border: none;
+  border-bottom: #757474b7 solid 1px;
+}
+
+.contact-form {
+  margin-top: 4rem;
+  input {
+    @include form-input;
+  }
+  textarea {
+    @include form-input;
+  }
+  p {
+    width: 90%;
+    font-size: 1.6rem;
+    font-family: variables.$font-menu;
+  }
+}
+
+.button-cntr {
+  width: 90%;
+  @include center;
+}
+
+.send-button {
+  background-color: variables.$grey-grey-shark-light;
+  color: variables.$bkg-white;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-family: variables.$font-menu;
+  font-weight: lighter;
+  font-size: 1.5rem;
+}

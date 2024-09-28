@@ -1,0 +1,93 @@
+@use '../../styles/variables';
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 3rem;
+  height: 8vh;
+  text-transform: uppercase;
+  font-family: variables.$font-menu;
+  font-size: 1.6rem;
+  a{
+    text-decoration: none;
+    will-change: transform;
+    color: variables.$grey-shark;
+  }
+  & a:hover, :focus {
+    color: variables.$yellow;
+    transition: color 1s;
+    transition: transform 650ms;
+    transform: scale(1.1);
+  }
+}
+
+.active {
+  border-bottom: 1px solid variables.$yellow;
+}
+
+.nav__toggle {
+  cursor: pointer;
+  display: none;
+  height: auto;
+  div {
+    z-index: 9999;
+    width: 2.5rem;
+    height: 0.2rem;
+    margin: 0.4rem;
+    background: variables.$grey-shark;
+    transition: 0.4s ease-in;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav__toggle {
+    display: block;
+  }
+  .menu {
+    position: fixed;
+    margin-top: 2.5rem;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 3rem;
+    transform: translateX(100%);
+    transition: 0.5s ease-in-out;
+    background-color: variables.$grey-shark;
+    a{
+      color: variables.$bkg-white;
+    }
+  }
+}
+
+//nav active class
+.nav__active {
+  transform: translateX(0);
+  z-index: 10;
+}
+.slide-right {
+  -webkit-animation: slide-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+// animation icon
+
+.toggle {
+  display: block;
+  .line1 {
+    -webkit-transform: rotate(-45deg) translate(-4px, 4px);
+    transform: rotate(-45deg) translate(-4px, 4px);
+  }
+  .line2 {
+    opacity: 0;
+  }
+  .line3 {
+    transform: rotate(45deg) translate(-4px, -4px);
+    -webkit-transform: rotate(45deg) translat(-4px, -4px);
+  }
+  @media screen and (min-width: 768px) {
+    display: none; 
+  }
+}
