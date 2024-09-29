@@ -25,12 +25,14 @@
     "astro-embed": "^0.7.2",
     "clsx": "^2.1.1",
     "framer-motion": "^11.5.4",
+    "plyr": "^3.7.8",
     "tailwind-merge": "^2.5.2",
     "tailwindcss": "^3.4.11",
     "typescript": "^5.6.2",
     "video.js": "^8.17.4"
   },
   "devDependencies": {
+    "@vimeo/player": "^2.24.0",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
     "react": "18.3.1",
