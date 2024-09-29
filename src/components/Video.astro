@@ -1,13 +1,28 @@
-<video
-  id="player"
-  class="absolute top-0 left-0 w-full h-full object-cover"
-  autoplay
-  loop
-  muted
-  playsinline
-  preload="metadata"
->
-  <source src="/videos/publi.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
-<script type="module" src="/src/components/videoPlayer.js"></script>
+<div class="plyr__video-embed" id="player">
+  <iframe
+    src="https://player.vimeo.com/video/1008788899?autoplay=1&loop=1&muted=1&controls=0&byline=false&portrait=false&title=false&speed=true&transparent=0&gesture=media"
+    allowfullscreen
+    allowtransparency
+    allow="autoplay"></iframe>
+</div>
+
+<script is:inline>
+  import Plyr from "plyr";
+  const player = new Plyr("#player", { captions: { active: true } });
+</script>
+
+<style>
+  .embed-container {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+  }
+
+  #player iframe,
+  #player object,
+  #player embed {
+    width: 100%;
+  }
+</style>
