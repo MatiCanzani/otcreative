@@ -1,50 +1,48 @@
+---
+import Plyr from "astro-plyr";
+import type { Options, SourceInfo } from "astro-plyr";
 
-<div class="plyr__video-embed" id="player">
-  <div class="w-full h-0 relative pb-[56.25%]" id="embed-container">
-    <iframe
-      src="https://player.vimeo.com/video/1008788899?autoplay=1&loop=1&muted=1&controls=0&byline=false&portrait=false&title=false&speed=true&transparent=0&gesture=media"
-      allowfullscreen
-      allowtransparency
-      loading="lazy"
-      allow="autoplay"></iframe>
-  </div>
-</div>
+const source: SourceInfo = {
+  type: "video",
+  title: "Example title",
+  // poster:
+  //   "https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg",
+  sources: [
+    {
+      src: "https://res.cloudinary.com/mcanzani/video/upload/v1727634102/publi_qyioxi.mp4",
+      type: "video/mp4",
+    },
+    {
+      src: "https://res.cloudinary.com/mcanzani/video/upload/v1727634102/publi_qyioxi.mp4",
+      type: "video/mp4",
+      quality: { options: [2880] },
+    },
+  ],
+};
 
-<script is:inline>
-  import Plyr from "plyr";
-  const player = new Plyr("#player", { captions: { active: true } });
-</script>
+const options: Options = {
+  debug: true,
+  autoplay: true,
+  muted: true,
+  controls: false,
+};
+---
 
-<style>
-  .player .vp-video-wrapper object,
-  .player .vp-video-wrapper video {
-    width: 100%;
-    height: 100vh;
-    max-width: none;
-    max-height: none;
-  }
+<Plyr options={options} source={source} />
 
-  #player {
+<style is:global>
+  .plyr--video {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     z-index: -1;
     background-color: black;
   }
 
-  #embed-container {
-    position: relative;
+  .plyr video {
+    display: block;
+    height: 100vh;
     width: 100%;
-    height: 100%;
-  }
-
-  #player iframe,
-  #player object,
-  #player embed {
-    width: 100%;
-    height: 100%;
-    border: none;
+    object-fit: cover;
   }
 </style>

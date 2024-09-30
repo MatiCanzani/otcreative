@@ -47,6 +47,9 @@ importers:
       astro-embed:
         specifier: ^0.7.2
         version: 0.7.2(astro@4.15.5(@types/node@18.19.50)(rollup@3.29.4)(typescript@5.6.2))
+      astro-plyr:
+        specifier: ^1.1.0
+        version: 1.1.0(astro@4.15.5(@types/node@18.19.50)(rollup@3.29.4)(typescript@5.6.2))(plyr@3.7.8)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -924,6 +927,12 @@ packages:
     resolution: {integrity: sha512-v/j6yRA9Wa+TEHBV64dQU5bLKuYiy1mNudiKIM+nvFe1bAUh+4wzQOf3lRofrxyBMgHaZbr8Xy7oLS9PVzu5jg==}
     peerDependencies:
       astro: ^2.0.0 || ^3.0.0-beta || ^4.0.0-beta
+
+  astro-plyr@1.1.0:
+    resolution: {integrity: sha512-R6d6eRV3vWmSq1NMYFDfU2PBM0Ryi5KENeYw6CcZr10jno7fEYITHsdr424pkoHtEtdLXkdYmkqBuqwOwYY7XQ==}
+    peerDependencies:
+      astro: '*'
+      plyr: ^3.7.8
 
   astro@4.15.5:
     resolution: {integrity: sha512-zcHXpRav0dtYpddxoGMDN7A7SKrGL9wsu5IxLjqCcZhylfZ/5mfLfoGYnSg7aFwuAleUXP66lyfY+GDbFTbF2w==}
@@ -3549,6 +3558,11 @@ snapshots:
       '@astro-community/astro-embed-vimeo': 0.3.8(astro@4.15.5(@types/node@18.19.50)(rollup@3.29.4)(typescript@5.6.2))
       '@astro-community/astro-embed-youtube': 0.5.3(astro@4.15.5(@types/node@18.19.50)(rollup@3.29.4)(typescript@5.6.2))
       astro: 4.15.5(@types/node@18.19.50)(rollup@3.29.4)(typescript@5.6.2)
+
+  astro-plyr@1.1.0(astro@4.15.5(@types/node@18.19.50)(rollup@3.29.4)(typescript@5.6.2))(plyr@3.7.8):
+    dependencies:
+      astro: 4.15.5(@types/node@18.19.50)(rollup@3.29.4)(typescript@5.6.2)
+      plyr: 3.7.8
 
   astro@4.15.5(@types/node@18.19.50)(rollup@3.29.4)(typescript@5.6.2):
     dependencies:
